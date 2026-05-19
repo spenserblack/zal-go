@@ -13,6 +13,10 @@ H̞͖̚̚e̼l̶̬̩l͙̱õ͓̬,̜̭̬̭ ̑w̢͖͌̾o̲̻r͚ļ͍d̦͎̂!̀̾͠
 
 ## Installation
 
+### `go install`
+
+*This installation method will install the executable as `zal-go`.*
+
 ```shell
 go install github.com/spenserblack/zal-go@latest
 ```
