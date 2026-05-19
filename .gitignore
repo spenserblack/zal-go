@@ -33,3 +33,7 @@ go.work.sum
 
 # Executable
 /zalgo
+
+# Built assets
+dist/*
+!dist/.gitkeep
