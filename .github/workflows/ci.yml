@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Set up Go
+        uses: actions/setup-go@v6
+        with:
+          go-version-file: 'go.mod'
+      - name: "B̜̻̟͍͕̘̭̟̑̀̉̀̂̓̃͢u̵̥͚̫̬̻̹̺̻̘̍̍͆͆̓̇͞͡ḯ̖̗̖̰̮̮̗̜̇̃̾̐͜l̨̟̫̥̬͔̝̭̖̣̅̆͋͂̔̎̚͜͝d̶̡̨̨͓͔̖̼͍̎̊̿̑̊̿̐͢"
+        run: go build -v ./...
+      - name: "Ţ̟͍̙͕̦̺̒̇̅̉̋̍́͊̎e̷̡͔̹̦̓͂̈̓̒͂͂̃͊͝ş̶̸͕͎̭̳̖̙̩̃͌͌̾̑͝͞t̛͕͕͖̭̰̥̻̫̯̒͊̆͜͟"
+        run: go test -v ./...
