@@ -18,13 +18,15 @@ The severity of the corruption can be adjusted with the `--min` and `--max` opti
 
 ### From GitHub Releases
 
+Use the appropriate script, or just download it from the releases page and put it somewhere on `PATH`.
+
+#### Unix
+
 *You may need to call `sudo sh` instead.*
 
 ```shell
 curl -fsSL https://github.com/spenserblack/zal-go/raw/refs/heads/main/_scripts/install-gh.sh | sh
 ```
-
-Or just go to the releases page and download it.
 
 ### `go install`
 
