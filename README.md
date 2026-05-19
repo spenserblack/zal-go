@@ -11,6 +11,8 @@ $ echo "Hello, world!" | zalgo
 H̞͖̚̚e̼l̶̬̩l͙̱õ͓̬,̜̭̬̭ ̑w̢͖͌̾o̲̻r͚ļ͍d̦͎̂!̀̾͠
 ```
 
+The severity of the corruption can be adjusted with the `--min` and `--max` options.
+
 ## Installation
 
 ### `go install`
