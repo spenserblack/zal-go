@@ -1,17 +1,15 @@
 package main
 
 import (
-	"io"
+	"fmt"
 	"os"
 
-	"github.com/spenserblack/zal-go/corrupter"
+	"github.com/spenserblack/zal-go/cmd"
 )
 
 func main() {
-	const text string = "Hello, world!\n"
-	w := corrupter.New(os.Stdout)
-	_, err := io.WriteString(w, text)
-	if err != nil {
-		panic(err)
+	if err := cmd.Execute(); err != nil {
+		fmt.Fprintln(os.Stderr, err)
+		os.Exit(1)
 	}
 }
