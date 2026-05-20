@@ -47,7 +47,8 @@ func (c *Corrupter) Write(p []byte) (n int, err error) {
 		if err != nil {
 			return
 		}
-		corruptionTimes := c.Min + rand.Intn(c.Max - c.Min)
+		// NOTE We make the maximum *inclusive* with +1
+		corruptionTimes := c.Min + rand.Intn(c.Max - c.Min + 1)
 		for i := 0; i < corruptionTimes; i++ {
 			_, err = buf.WriteRune(selectCorruption())
 			if err != nil {
