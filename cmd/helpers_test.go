@@ -3,28 +3,28 @@ package cmd
 import "testing"
 
 func TestAssertMinMax(t *testing.T) {
-	tests := []struct{
-		name string
-		min int
-		max int
+	tests := []struct {
+		name    string
+		min     int
+		max     int
 		wantErr bool
 	}{
 		{
-			name: "min is less than max",
-			min: 20,
-			max: 30,
+			name:    "min is less than max",
+			min:     20,
+			max:     30,
 			wantErr: false,
 		},
 		{
-			name: "min is equal to max",
-			min: 20,
-			max: 20,
+			name:    "min is equal to max",
+			min:     20,
+			max:     20,
 			wantErr: false,
 		},
 		{
-			name: "min is greater than max",
-			min: 30,
-			max: 20,
+			name:    "min is greater than max",
+			min:     30,
+			max:     20,
 			wantErr: true,
 		},
 	}

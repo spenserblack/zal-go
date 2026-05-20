@@ -39,7 +39,7 @@ func selectCorruption() rune {
 }
 
 func init() {
-	corruption = make([]rune, 0, len(above) + len(below) + len(within))
+	corruption = make([]rune, 0, len(above)+len(below)+len(within))
 	corruption = append(corruption, above...)
 	corruption = append(corruption, below...)
 	corruption = append(corruption, within...)

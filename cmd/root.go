@@ -17,7 +17,7 @@ var (
 )
 
 var rootCmd = &cobra.Command{
-	Use: "zalgo [flags] [string]",
+	Use:   "zalgo [flags] [string]",
 	Short: "Corrupt text",
 	Long: heredoc.Doc(`
 		Corrupts text.
@@ -25,7 +25,7 @@ var rootCmd = &cobra.Command{
 		If no text is passed, it is read from stdin.
 	`),
 	Example: "zalgo \"Hello, world!\"",
-	Args: cobra.RangeArgs(0, 1),
+	Args:    cobra.RangeArgs(0, 1),
 	RunE: func(cmd *cobra.Command, args []string) error {
 		stdout := cmd.OutOrStdout()
 		stderr := cmd.ErrOrStderr()

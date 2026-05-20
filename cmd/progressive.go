@@ -11,12 +11,12 @@ import (
 var (
 	progressiveStartMin int
 	progressiveStartMax int
-	progressiveEndMin int
-	progressiveEndMax int
+	progressiveEndMin   int
+	progressiveEndMax   int
 )
 
 var progressiveCmd = &cobra.Command{
-	Use: "progressive <TEXT>",
+	Use:   "progressive <TEXT>",
 	Short: "Progressively change the amount of corruption",
 	Long: heredoc.Doc(`
 		Progressively changes the level of corruption from the beginning to the end of

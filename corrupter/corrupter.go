@@ -25,7 +25,7 @@ func New(w io.Writer) *Corrupter {
 	return &Corrupter{
 		Min: 1,
 		Max: 10,
-		w: w,
+		w:   w,
 	}
 }
 
@@ -49,7 +49,7 @@ func (c *Corrupter) Write(p []byte) (n int, err error) {
 			return
 		}
 		// NOTE We make the maximum *inclusive* with +1
-		corruptionTimes := c.Min + rand.Intn(c.Max - c.Min + 1)
+		corruptionTimes := c.Min + rand.Intn(c.Max-c.Min+1)
 		for i := 0; i < corruptionTimes; i++ {
 			_, err = buf.WriteRune(selectCorruption())
 			if err != nil {
@@ -78,7 +78,7 @@ func (c *Corrupter) WriteRune(r rune) (n int, err error) {
 	}
 	if isCorruptableRune(r) {
 		// NOTE We make the maximum *inclusive* with +1
-		times := c.Min + rand.Intn(c.Max - c.Min + 1)
+		times := c.Min + rand.Intn(c.Max-c.Min+1)
 		for i := 0; i < times; i++ {
 			_, err = writeRuneBuffer.WriteRune(selectCorruption())
 			if err != nil {
