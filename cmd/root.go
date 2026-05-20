@@ -62,6 +62,6 @@ var rootCmd = &cobra.Command{
 }
 
 func init() {
-	rootCmd.PersistentFlags().IntVar(&min, "min", 1, "Set the minimum level of corruption")
-	rootCmd.PersistentFlags().IntVar(&max, "max", 5, "Set the maximum level of corruption")
+	rootCmd.Flags().IntVar(&min, "min", 1, "Set the minimum level of corruption")
+	rootCmd.Flags().IntVar(&max, "max", 5, "Set the maximum level of corruption")
 }
