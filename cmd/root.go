@@ -1,7 +1,6 @@
 package cmd
 
 import (
-	"errors"
 	"fmt"
 	"io"
 
@@ -32,8 +31,9 @@ var rootCmd = &cobra.Command{
 		stderr := cmd.ErrOrStderr()
 		stdin := cmd.InOrStdin()
 
-		if max < min {
-			return errors.New("max cannot be less than min")
+		err := assertMinMax(min, max)
+		if err != nil {
+			return err
 		}
 
 		var bytes []byte
@@ -52,7 +52,7 @@ var rootCmd = &cobra.Command{
 		corrupter.Min = min
 		corrupter.Max = max
 
-		_, err := corrupter.Write(bytes)
+		_, err = corrupter.Write(bytes)
 		if err != nil {
 			fmt.Fprintln(stderr, "Couldn't write: ", err)
 		}
