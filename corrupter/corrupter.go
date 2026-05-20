@@ -31,6 +31,7 @@ func New(w io.Writer) *Corrupter {
 
 // Write implements io.Writer.
 func (c *Corrupter) Write(p []byte) (n int, err error) {
+	// TODO UTF-8 encode the bytes and call WriteRune in a loop, instead?
 	buf := new(bytes.Buffer)
 	var written int
 	for _, b := range p {
@@ -65,7 +66,36 @@ func (c *Corrupter) Write(p []byte) (n int, err error) {
 	return
 }
 
+// writeRuneBuffer is a bytes buffer for writing runes.
+var writeRuneBuffer = new(bytes.Buffer)
+
+// WriteRune writes a single rune, writing it as UTF-8 bytes.
+func (c *Corrupter) WriteRune(r rune) (n int, err error) {
+	writeRuneBuffer.Reset()
+	_, err = writeRuneBuffer.WriteRune(r)
+	if err != nil {
+		return
+	}
+	if isCorruptableRune(r) {
+		// NOTE We make the maximum *inclusive* with +1
+		times := c.Min + rand.Intn(c.Max - c.Min + 1)
+		for i := 0; i < times; i++ {
+			_, err = writeRuneBuffer.WriteRune(selectCorruption())
+			if err != nil {
+				return
+			}
+		}
+	}
+	bytes := writeRuneBuffer.Bytes()
+	return c.w.Write(bytes)
+}
+
 // isCorruptable checks if a rune can be corrupted.
 func isCorruptable(b byte) bool {
 	return b != '\n' && b != '\r'
+}
+
+// isCorruptableRune checks if a rune can be corrupted.
+func isCorruptableRune(r rune) bool {
+	return r != '\n' && r != '\r'
 }
