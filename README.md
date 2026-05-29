@@ -7,6 +7,12 @@ This is a simple CLI utility to make text appear corrupted.
 
 ## Usage
 
+### Web
+
+Go to [spenserblack.github.io/zal-go](https://spenserblack.github.io/zal-go/).
+
+### CLI
+
 ```console
 $ echo "Hello, world!" | zalgo
 H̞͖̚̚e̼l̶̬̩l͙̱õ͓̬,̜̭̬̭ ̑w̢͖͌̾o̲̻r͚ļ͍d̦͎̂!̀̾͠
