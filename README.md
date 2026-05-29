@@ -1,6 +1,11 @@
 # zal-go
 
 z̢͎͍̱̬͙̭͙̻̜͕̝̮̄̾̉͊̉̋̅̋̒͆̑̄̂̃̓͟͜ą̶̸̛̛̤̹̩̟̤̜̮͙̟͍̰̐̽͋̆́͆̕͟͠͠l̵̡̛̪̮̘̱̻̪̗̱̤̰͙͕̩̆̌̽̓̆̓̊͆̍̓́͌̉͞-̵̸̨̨̧̛͖̟̝͚͋̃̎̀̂̑̒͢͞͡g̷̢̢̡̭͎̭̘͚̱̘̩̪͖̝͍͖̑̊̏̎͞ő̧̻̟̭̫̹̦͕͍̰̾̄͊̒̎̈́̍̐̉̆́̕
+
+[![Go Reference](https://pkg.go.dev/badge/github.com/spenserblack/zal-go.svg)](https://pkg.go.dev/github.com/spenserblack/zal-go)
+[![CI](https://github.com/spenserblack/zal-go/actions/workflows/ci.yml/badge.svg)](https://github.com/spenserblack/zal-go/actions/workflows/ci.yml)
+[![Deploy static content to Pages](https://github.com/spenserblack/zal-go/actions/workflows/site.yml/badge.svg)](https://github.com/spenserblack/zal-go/actions/workflows/site.yml)
+
 ## Description
 
 This is a simple CLI utility to make text appear corrupted.
