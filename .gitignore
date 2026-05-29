@@ -37,3 +37,6 @@ go.work.sum
 # Built assets
 dist/*
 !dist/.gitkeep
+
+# Golang WASM distributable
+_site/assets/
