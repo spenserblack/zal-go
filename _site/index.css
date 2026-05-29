@@ -3,6 +3,8 @@
   --light: #EDC;
   --dark-2: #333;
   --light-2: #EDD;
+  --dark-dimmed: #642;
+  --light-dimmed: #CAB;
   --link: #CDE;
   --link-visited: #DCF;
   --color-fg: var(--light);
@@ -11,6 +13,8 @@
   --input-fg: var(--light-2);
   --input-bg: var(--dark-2);
   --input-border: var(--light-2);
+  --input-fg-disabled: var(--light-dimmed);
+  --input-bg-disabled: var(--dark-dimmed);
 }
 
 @media (prefers-color-scheme: light) {
@@ -20,6 +24,8 @@
     --input-fg: var(--dark-2);
     --input-bg: var(--light-2);
     --input-border: var(--dark-2);
+    --input-fg-disabled: var(--dark-dimmed);
+    --input-bg-disabled: var(--light-dimmed);
     --link: #4AC;
     --link-visited: #E2E;
   }
@@ -42,6 +48,11 @@ input, textarea, button {
   color: var(--input-fg);
   background-color: var(--input-bg);
   border-color: var(--input-border);
+}
+
+input:disabled, textarea:disabled, button:disabled {
+  color: var(--input-fg-disabled);
+  background-color: var(--input-bg-disabled);
 }
 /* }}}: Element styling */
 
