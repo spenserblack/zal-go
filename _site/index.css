@@ -1,0 +1,15 @@
+.corruptable .plain {
+  display: unset;
+}
+
+.corruptable .corrupt {
+  display: none;
+}
+
+.corruptable:hover .plain {
+  display: none;
+}
+
+.corruptable:hover .corrupt {
+  display: unset;
+}
