@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>zal-go</title>
+    <script src="assets/wasm_exec.js"></script>
+    <script>
+
+    </script>
+  </head>
+  <body>
+    <h1><code>zal-go</code></h1>
+    <form id="zalgo-form">
+      <textarea id="zalgo-input"></textarea>
+      <button type="submit">Corrupt</button>
+    </form>
+    <output id="zalgo-output"></output>
+    <script type="module">
+      const form = document.getElementById("zalgo-form");
+      const input = document.getElementById("zalgo-input");
+      const output = document.getElementById("zalgo-output");
+      const go = new Go();
+      let { module, instance } = await WebAssembly
+        .instantiateStreaming(fetch("assets/main.wasm"), go.importObject);
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        go.run(instance);
+        instance = await WebAssembly.instantiate(module, go.importObject);
+      });
+    </script>
+    <footer>
+      <ul>
+        <li>
+          <a href="assets/LICENSE-wasm_exec"><code>wasm_exec.js</code> license</a>
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>
