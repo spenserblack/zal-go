@@ -1,3 +1,50 @@
+:root {
+  --dark: #311;
+  --light: #EDC;
+  --dark-2: #333;
+  --light-2: #EDD;
+  --link: #CDE;
+  --link-visited: #DCF;
+  --color-fg: var(--light);
+  --color-bg: var(--dark);
+
+  --input-fg: var(--light-2);
+  --input-bg: var(--dark-2);
+  --input-border: var(--light-2);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-fg: var(--dark);
+    --color-bg: var(--light);
+    --input-fg: var(--dark-2);
+    --input-bg: var(--light-2);
+    --input-border: var(--dark-2);
+    --link: #4AC;
+    --link-visited: #E2E;
+  }
+}
+
+/* Element styling: {{{ */
+:root {
+  color: var(--color-fg);
+  background-color: var(--color-bg);
+}
+
+a {
+  color: var(--link);
+}
+a:visited {
+  color: var(--link-visited);
+}
+
+input, textarea, button {
+  color: var(--input-fg);
+  background-color: var(--input-bg);
+  border-color: var(--input-border);
+}
+/* }}}: Element styling */
+
 .corruptable .plain {
   display: unset;
 }
