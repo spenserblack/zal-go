@@ -42,6 +42,12 @@ Use the appropriate script, or just download it from the releases page and put i
 curl -fsSL https://github.com/spenserblack/zal-go/raw/refs/heads/main/_scripts/install-gh.sh | sh
 ```
 
+#### Windows
+
+```powershell
+Invoke-WebRequest -UseBasicParsing "https://github.com/spenserblack/zal-go/raw/refs/heads/main/_scripts/install-gh.ps1" | Invoke-Expression
+```
+
 ### `go install`
 
 *This installation method will install the executable as `zal-go`.*
