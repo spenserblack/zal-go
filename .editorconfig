@@ -26,6 +26,12 @@ indent_size = 2
 indent_style = space
 indent_size = 2
 
+# PowerShell
+[*.ps1]
+end_of_line = CRLF
+indent_style = space
+indent_size = 4
+
 # Shell
 [*.{sh,bash}]
 indent_style = tab
