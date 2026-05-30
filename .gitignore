@@ -40,3 +40,6 @@ dist/*
 
 # Golang WASM distributable
 _site/assets/
+
+# GitHub assets
+*.tar.gz
