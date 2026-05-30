@@ -26,6 +26,11 @@ indent_size = 2
 indent_style = space
 indent_size = 2
 
+# Makefile
+[Makefile]
+indent_style = tab
+indent_size = 8
+
 # PowerShell
 [*.ps1]
 end_of_line = CRLF
